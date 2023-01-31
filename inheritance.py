@@ -2,36 +2,36 @@
 # Teacher "IS A" Person => this is correct
 # Dog "IS A" Person => this is incorrect
 
-# class Person:
-#     def __init__(self, name, address):
-#         self.name = name
-#         self.address = address
+class Person:
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
 
-#     def walk(self):
-#         print(f"{self.name} is walking.")
-
-
-# class Teacher(Person):
-#     def __init__(self, name, address, designation):
-#         super().__init__(name, address)
-#         self.designation = designation
-
-#     def teach(self):
-#         print(f"{self.name} is teaching.")
+    def walk(self):
+        print(f"{self.name} is walking.")
 
 
-# class Student(Person):
-#     def __init__(self, name, address, roll_number):
-#         super().__init__(name, address)
-#         self.roll = roll_number
+class Teacher(Person):
+    def __init__(self, name, address, designation):
+        super().__init__(name, address)
+        self.designation = designation
 
-#     def walk(self):
-#         print(f"{self.name} is running.")
+    def teach(self):
+        print(f"{self.name} is teaching.")
 
 
-# # t = Teacher("Ram", "Ktm", "prof")
-# # t.walk()
-# # t.teach()
+class Student(Person):
+    def __init__(self, name, address, roll_number):
+        super().__init__(name, address)
+        self.roll = roll_number
+
+    def walk(self):
+        print(f"{self.name} is running.")
+
+
+t = Teacher("Ram", "Ktm", "prof")
+t.walk()
+t.teach()
 
 
 # class User:
@@ -100,10 +100,14 @@ class Product:
             raise ProductPriceError("Price can not be less than zero.")
         self.__price = price
 
-tshirt = Product("Tshirt", 500)
-try:
-    tshirt.price = -100
-    print(f"Without exception: {tshirt.price}")
-except ProductPriceError as msg:
-    print(msg)
-    print(f"After exception: {tshirt.price}")
+
+if __name__ == "__main__":
+    tshirt = Product("Tshirt", 500)
+    try:
+        tshirt.price = -100
+        print(f"Without exception: {tshirt.price}")
+    except ProductPriceError as msg:
+        print(msg)
+        print(f"After exception: {tshirt.price}")
+
+
