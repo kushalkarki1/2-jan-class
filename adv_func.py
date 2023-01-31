@@ -1,90 +1,90 @@
-# def greet():
-#     print("Hello Students!")
-#     print("Welcome everyone!")
+def greet():
+    print("Hello Students!")
+    print("Welcome everyone!")
 
-# g = greet # a = 10
-# g() # greet()
-
-
-# def addition(num1, num2):
-#     print(num1 + num2)
-
-# a = addition
-# a(10, 15)
-# # a = 5
-
-# def outer():
-#     def inner():
-#         print("I am inner function")
-#     inner()
+g = greet # a = 10
+g() # greet()
 
 
-# outer()
-# # print(a)
+def addition(num1, num2):
+    print(num1 + num2)
 
-# def calculator():
-#     def addition(num1, num2):
-#         print(num1 + num2)
-#     return addition
+a = addition
+a(10, 15)
+# a = 5
 
-# add = calculator()
-# add(15 ,20)
-
-
-# def calculator(operator):
-#     def addition(a, b):
-#         return a + b
-#     def difference(a, b):
-#         return a - b
-#     def product(a, b):
-#         return a * b
-#     if operator == "+":
-#         return addition
-#     elif operator == "-":
-#         return difference
-#     elif operator == "*":
-#         return product
-
-# a = calculator("*")
-# print(a(20, 10))
-
-# # closure
-# def increment(num):
-#     def factor(val):
-#         return num + val
-#     return factor
-
-# increase_by = increment(20)
-# print(increase_by(10))
-# print(increase_by(30))
+def outer():
+    def inner():
+        print("I am inner function")
+    inner()
 
 
-# def welcome(name):
-#     print(f"Welcome {name}")
+outer()
+# print(a)
 
-# def bye_bye(name):
-#     print(f"Bye bye {name}")
+def calculator():
+    def addition(num1, num2):
+        print(num1 + num2)
+    return addition
 
-# def greet(func):
-#     func("Ram")
-
-# greet(bye_bye)
+add = calculator()
+add(15 ,20)
 
 
-# def decorate_function(func):
-#     def wrapper():
-#         print("Hello everyone!")
-#         func()
-#         print("Bye everyone!")
-#     return wrapper
+def calculator(operator):
+    def addition(a, b):
+        return a + b
+    def difference(a, b):
+        return a - b
+    def product(a, b):
+        return a * b
+    if operator == "+":
+        return addition
+    elif operator == "-":
+        return difference
+    elif operator == "*":
+        return product
 
-# @decorate_function
-# def welcome():
-#     print(f"Welcome everyone!")
+a = calculator("*")
+print(a(20, 10))
 
-# w = decorate_function(welcome)
-# w()
-# welcome()
+# closure
+def increment(num):
+    def factor(val):
+        return num + val
+    return factor
+
+increase_by = increment(20)
+print(increase_by(10))
+print(increase_by(30))
+
+
+def welcome(name):
+    print(f"Welcome {name}")
+
+def bye_bye(name):
+    print(f"Bye bye {name}")
+
+def greet(func):
+    func("Ram")
+
+greet(bye_bye)
+
+
+def decorate_function(func):
+    def wrapper():
+        print("Hello everyone!")
+        func()
+        print("Bye everyone!")
+    return wrapper
+
+@decorate_function
+def welcome():
+    print(f"Welcome everyone!")
+
+w = decorate_function(welcome)
+w()
+welcome()
 
 def smart_division(func):
     def wrapper(a, b):
